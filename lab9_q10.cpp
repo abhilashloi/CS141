@@ -1,6 +1,10 @@
+//Write a function revString(char*) which reverses the parameter cstring. 
+//The function returns nothing.
+//You may use C++ string handling functions in <cstring> in the function if you wish.
 #include <iostream>
 #include<cstring>
 using namespace std;
+//Defining a function to revese the parameter string
 void revtString(char* p)
 {
     int end;
