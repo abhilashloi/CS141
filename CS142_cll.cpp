@@ -14,7 +14,7 @@ class Node{
     }
 };
 //created class CSLL
-class CSLL{
+class LinkedList{
     public:
     Node * head, *tail;
     CSLL(){
@@ -100,7 +100,7 @@ class CSLL{
             cout<<pos<<" is invalid position"<<endl;
         }
     }
-    void DeleteAt(int pos){
+    void deleteAt(int pos){
         // To Do
         int count=0;
     	Node *current;
@@ -124,7 +124,7 @@ class CSLL{
     	}
     }
     // delete function
-    void Delet(){
+    void del(){
         // Deletes the last element.
         Node * current; 
 		Node * temp;
@@ -138,7 +138,7 @@ class CSLL{
 		delete current;
     }
     
-    int CountItems(){
+    int counting(){
         // Counts the Number of items.
         int count = 0;
 	    Node* current = head;//pointer to go from the List
