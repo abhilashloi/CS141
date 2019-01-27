@@ -16,7 +16,7 @@ class Node{
     }
 };
 // creating class DLL(doubly linked list)
-class dolinklst{
+class LinkedList{
     public:
     Node * head, *tail;
     dolinklst()
@@ -108,7 +108,7 @@ class dolinklst{
             cout<<pos<<" is invalid position"<<endl;
         }
     }
-    void DeleteAt(int pos){
+    void deleteAt(int pos){
         // count the numbers
         int count=0;
     	Node *current;
@@ -143,7 +143,7 @@ class dolinklst{
     	}
     }
     // delete function to delete a node at last
-    void Del(){
+    void del(){
         // Deletes the last element.
         tail=head;
         while(tail->next->next != NULL)
@@ -153,7 +153,7 @@ class dolinklst{
 		tail->next = NULL;
     }
     
-    int CountItems(){
+ int counting(){
         // Counts the Number of items.
         int count = 0;
 	    Node* temp = head;//pointer to go from the List
@@ -169,64 +169,78 @@ class dolinklst{
 
 int main()//main function
 {
-    cout<<"--------------------------------------------------------------------------------"<<endl;
-	cout<<"----------------------------Doubly Linked List Object.--------------------------"<<endl;
-    cout<<"--------------------------------------------------------------------------------"<<endl;
+    //Object of the class
+    LinkedList l1;
+    //Enter values
+    for(int i=1;i<6;i++)
+    {
+        l1.insert(i);
+    }
+    //showing output
+    cout<<"Normal Display::"<<endl;
+    l1.display();
+    cout<<"The number of items before deletion="<<l1.counting()<<endl;
+    cout<<endl;
     
-    dolinklst list1; //objects of LinkedList
-    int choice;
-    int value = 0;
-    int pos = 0;
-    cout<<"Enter 1 to add an element to the end of the linked list"<<endl;
-    cout<<"Enter 2 to add an element at a specified position in the linked list"<<endl;
-    cout<<"Enter 3 to delete an element from the end of the linked list"<<endl;
-    cout<<"Enter 4 to delete an element from a specified position in the linked list"<<endl;
-    cout<<"Enter 5 to count the number of elements in th linked list"<<endl;
-    cout<<"Enter 6 to display the elements of the linked list"<<endl;
-    cout<<"Enter 0 to exit."<<endl;
-    cout<<"--------------------------------------------------------------------------------"<<endl;
+    cout<<"Display after deletion of last element::"<<endl;
+    l1.del();//use of delete
+    l1.display();
+    cout<<"The number of items after deletion="<<l1.counting()<<endl;
+    cout<<endl;
     
-    do
-	{
-		cout<<"Enter your choice"<<endl;
-        cin>>choice;
-        
-		switch(choice)
-		{
-		    case 1 :cout<<"Enter the value to be added to the end of the linked list"<<endl;
-		        	cin>>value;
-		        	list1.insert(value);
-					break;
-			
-			case 2 :cout<<"Enter the value to be added to the linked list"<<endl;
-			        cin>>value;
-			        cout<<"Enter the position where the value has to be inserted"<<endl;
-			        cin>>pos;
-			        list1.InsertAt(value,pos);
-					break;
-			
-			case 3 :list1.Del();
-			        cout<<"  number has been deleted from the linked list."<<endl;
-					break;
-					
-			case 4 :cout<<"Enter the position to be deleted from the linked list"<<endl;
-			        cin>>pos;
-			        list1.DeleteAt(pos);
-			        cout<<" number has been deleted from the linked list from its specified position."<<endl;
-			        break;
-			        
-			case 5 :value = list1.CountItems();
-			        cout<<"The number of elements in the list is "<<value<<endl;
-					break;
-					
-			case 6 :list1.display();
-					break;
-	    	case 0 :break;
-            default:cout<<"Enter a valid integer."<<endl;
-				
-		}
-    	    
-	}while(choice!=0);
+    cout<<"Display after insertion at particular position(valid ex-1)::"<<endl;
+    l1.InsertAt(2,26);//use of insert at
+    l1.display();
+    cout<<"The number of items after insertion at position="<<l1.counting()<<endl;
+    cout<<endl;
+    
+    cout<<"Display after insertion at particular position(invalid ex-1)::"<<endl;
+    l1.InsertAt(5,26);//use of insert at
+    l1.display();
+    cout<<"The number of items after insertion at position="<<l1.counting()<<endl;
+    cout<<endl;
+    
+    
+    cout<<"Display after insertion at particular position(invalid ex-2)::"<<endl;
+    l1.InsertAt(15,15);//use of insert at
+    l1.display();
+    cout<<"The number of items after insertion at position="<<l1.counting()<<endl;
+    cout<<endl;
+    
+    
+    cout<<"Display after insertion at particular position(valid ex-2)::"<<endl;
+    l1.InsertAt(5,15);//use of insert at
+    l1.display();
+    cout<<"The number of items after insertion at position="<<l1.counting()<<endl;
+    cout<<endl;
+    
+    
+    cout<<"Display after deletion at particular position(valid ex-1)::"<<endl;
+    l1.deleteAt(1);//use of deleteAt
+    l1.display();
+    cout<<"The number of items after delete at position="<<l1.counting()<<endl;
+    cout<<endl;
+    
+    
+    cout<<"Display after insertion at particular position(invalid ex-1)::"<<endl;
+    l1.deleteAt(66);//use of deleteAt
+    l1.display();
+    cout<<"The number of items after delete at position="<<l1.counting()<<endl;
+    cout<<endl;
+    
+    
+    cout<<"Display after insertion at particular position(invalid ex-2)::"<<endl;
+    l1.deleteAt(696);//use of deleteAt
+    l1.display();
+    cout<<"The number of items after delete at position="<<l1.counting()<<endl;
+    cout<<endl;
+    
+    
+    cout<<"Display after deletion at particular position(valid ex-2)::"<<endl;
+    l1.deleteAt(51);//use of deleteAt
+    l1.display();
+    cout<<"The number of items after delete at position="<<l1.counting()<<endl;
+    cout<<endl;
     
        return 0; 
 }
