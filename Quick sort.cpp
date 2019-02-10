@@ -1,24 +1,23 @@
 //quick sort
 #include <iostream>
 using namespace std;
- // writing functions for pivot
+ // function for quick sort and partition
 void quick_sort(int[],int,int);
 int partition(int[],int,int);
  
 int main()
 {
-    int a[50],n,i;//maxsize upto 50 elements
-    cout<<"How many elements you want to enter?"<<endl;
+    int a[25],n,i;//size upto 25
+    cout<<"number of elements="<<endl;
     cin>>n;
-    cout<<"-------------------------------"<<endl;
-    cout<<"enter array elements:"<<endl;
+    cout<<"array elements are:"<<endl;
     //using for loop to enter the elements
     for(i=0;i<n;i++)
         cin>>a[i];
     //sorting it out
     quick_sort(a,0,n-1);
     cout<<"Array after sorting:";
-    //again a loop to display the sorted one
+    //using loop for dishplay
     for(i=0;i<n;i++)
         cout<<a[i]<<" ";
     
@@ -39,7 +38,7 @@ void quick_sort(int a[],int l,int u)//(arr,low,high)
 int partition(int a[],int l,int u)
 {
     int pivot,i,j,temp;
-    pivot=a[l];//chose pivot as the 1st element
+    pivot=a[l];//pivot as the 1st element
     i=l;
     j=u+1;
     
